@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>页面置换算法</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        h1{
+            margin-top: 50px;
+            text-align: center;
+        }
+        input{
+            width: 80px;
+            height: 30px;
+            text-align: center;
+            font-size: 15px;
+        }
+        #page{
+            width: 200px;
+            height: 30px;
+            font-size: 15px;
+        }
+        #content {
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>页面置换算法</h1>
+    <div id="content">
+            页面数: <input type="text" id="pages"></br></br>
+            各个页面: <input type="text" id="page"></br></br>
+            <input type="submit" id="btn">
+    </div>
+</body>
+<script>
+    window.onload = function(){
+        var oBtn = document.getElementById("btn");
+        oBtn.onclick = function(){
+            var oPages = document.getElementById("pages");
+            var oPage = document.getElementById("page");
+            var nPages = parseInt(oPages.value);
+            var aPage = oPage.value.split(",");
+            if(nPages != aPage.length){
+                alert("输入错误!请重新输入:");
+            }else{
+                FIFO(aPage);
+//                alert("正确");
+            }
+        };
+        function FIFO(elem){
+            var lackPage = 0;
+            var p = [];
+            var jage;
+            for(var i=0; i<elem.length; i++){
+                //添加到p的末尾
+                 p.push(elem[i]);
+//                console.log(p.length);
+                if(p.length <= 3){
+                    lackPage++;
+                }else if(p.length > 3){
+                    console.log("ei"+elem[i]);
+                    console.log("pM"+ p[p.length-1]);
+                    for(var i=0; i<elem.length; i++){
+                        if(elem[i] == 2){
+                            return;
+                        }
+                        if(i == elem.length -1){
+                            jage = true;
+                        }
+                        if(jage){
+                            lackPage++;
+                        }
+                    }
+                    p.shift();
+                }
+            }
+            console.log("p:" + p);
+            console.log("lp:" + lackPage);
+        }
+    }
+</script>
+</html>
