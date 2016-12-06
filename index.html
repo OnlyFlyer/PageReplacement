@@ -85,8 +85,8 @@
                     pageReplace++;
                     for(var j=0; j<p.length - 1; j++){
 //                        console.log(i);
-                        console.log('elem[i]'+elem[i]);
-                        console.log('p[j]'+p[j]);
+                        console.log('elem[i]:'+elem[i]);
+                        console.log('p[j]:'+p[j]);
                         if(elem[i] == p[j]){
 //                            console.log(elem[i]);
                             console.log("1:"+p[j]);
@@ -108,6 +108,7 @@
             }
 //            console.log("p:" + p);
             console.log("lp:" + lackPage);
+            alert("缺页次数:" + lackPage + ";缺页率:" + lackPage / elem.length + ";页面置换次数:" + pageReplace);
 //            console.log("pageReplace:"  + pageReplace);
             alert("p:" + p);
         }
