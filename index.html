@@ -78,13 +78,12 @@
                  p.push(elem[i]);
 //                console.log(p.length);
                 if(p.length <= 3){
-//                    console.log("jin");
+                    console.log("jin");
                     lackPage++;
                 }else{
-//                    console.log("jin2");
+                    console.log("jin2");
                     pageReplace++;
                     for(var j=0; j<p.length - 1; j++){
-//                        console.log(i);
                         console.log('elem[i]:'+elem[i]);
                         console.log('p[j]:'+p[j]);
                         if(elem[i] == p[j]){
@@ -92,7 +91,6 @@
                             console.log("1:"+p[j]);
                             console.log("2:"+elem[i]);
                             break;
-
                         }else if(j == p.length - 2){
                             console.log("mi");
                             lackPage++;
@@ -106,10 +104,10 @@
                     console.log('p.length'+p.length);
                 }
             }
-//            console.log("p:" + p);
+            console.log("p:" + p);
             console.log("lp:" + lackPage);
+            console.log("pageReplace:"  + pageReplace);
             alert("缺页次数:" + lackPage + ";缺页率:" + lackPage / elem.length + ";页面置换次数:" + pageReplace);
-//            console.log("pageReplace:"  + pageReplace);
             alert("p:" + p);
         }
     }
