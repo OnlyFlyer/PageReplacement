@@ -83,25 +83,27 @@
                 }else{
 //                    console.log("jin2");
                     pageReplace++;
-                    for(var j=0; j<p.length; j++){
+                    for(var j=0; j<p.length - 1; j++){
 //                        console.log(i);
-                        console.log(elem[i]);
-                        if(p[j] == elem[i]){
+                        console.log('elem[i]'+elem[i]);
+                        console.log('p[j]'+p[j]);
+                        if(elem[i] == p[j]){
 //                            console.log(elem[i]);
                             console.log("1:"+p[j]);
                             console.log("2:"+elem[i]);
                             break;
-                        }else if(j == p.length - 1){
-//                            console.log(2);
+
+                        }else if(j == p.length - 2){
+                            console.log("mi");
                             lackPage++;
+                            break;
                         }else{
-//                            console.log("==");
-//                            break;
+                            console.log("未知错误!");
                         }
                     }
                     //删除开头元素
                     p.shift();
-//                    console.log(p.length);
+                    console.log('p.length'+p.length);
                 }
             }
 //            console.log("p:" + p);
